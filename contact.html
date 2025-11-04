@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Contact — Elisabeth Albaret</title>
+	<meta name="description" content="Contact, prise de rendez-vous, demande d’information et de devis." />
+	<link rel="stylesheet" href="assets/css/styles.css" />
+	<link rel="icon" type="image/x-icon" href="/assets/img/logo_elisa.ico">
+</head>
+<body>
+	<div id="header-container"></div>
+
+	<main class="container">
+		<section class="section">
+			<h2 class="section-title">Contactez-moi au <bold><a href="tel:+33688820921">06 88 82 09 21</a></bold></h2>
+			<p>Vous souhaitez prendre rendez-vous pour un cours d’anglais, une préparation à un examen ou un entretien, ou simplement obtenir des informations ?</p>
+			<p>Remplissez le formulaire ci-dessous et je vous répondrai dans les plus brefs délais (envoi via WhatsApp).<br><br></p>
+			
+			<h2 class="section-title">Formulaire</h2>
+			<form id="contact-form" class="form">
+				<input class="input" type="text" name="name" placeholder="Nom" required />
+				<input class="input" type="email" name="email" placeholder="Email" required />
+				<input class="input" type="tel" name="phone" placeholder="Téléphone (optionnel)" />
+				<select class="select" name="objectif" required>
+					<option value="" disabled selected>Votre objectif</option>
+					<option>Cours d’anglais</option>
+					<option>Préparation examen</option>
+					<option>Préparation entretien</option>
+					<option>Autre</option>
+				</select>
+				<textarea class="textarea" name="message" placeholder="Votre message" required></textarea>
+				<button class="btn" type="submit">Envoyer via WhatsApp</button>
+				<p class="notice">L’envoi ouvre WhatsApp avec un message pré-rempli à destination de mon numéro.</p>
+			</form>
+		</section>
+
+		<section class="section">
+			<h2 class="section-title">Me trouver</h2>
+			<div class="card">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d360.5770121871252!2d3.8502225!3d43.697744!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b6a9bb5146e71f%3A0xdb38143fc3f1f49d!2s292%20Bd%20du%20Grand%20Devois%2C%2034980%20Saint-Cl%C3%A9ment-de-Rivi%C3%A8re!5e0!3m2!1sfr!2sfr!4v1762248457298!5m2!1sfr!2sfr" width="100%" height="360" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				<p class="notice" style="margin-top: 10px;">292 Bd du Grand Devois, 34980 Saint-Clément-de-Rivière</p>
+			</div>
+		</section>
+	</main>
+
+	<div id="footer-container"></div>
+
+	<script type="module" src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Elisabeth Albaret — Cours d’anglais & Préparation concours/examens</title>
+	<meta name="description" content="Cours d’anglais individuels en présentiel et préparation TOEIC/IELTS/TOEFL/entretiens. Méthode personnalisée, résultats mesurables, rendez-vous en ligne." />
+	<link rel="stylesheet" href="assets/css/styles.css" />
+	<link rel="icon" type="image/x-icon" href="/assets/img/logo_elisa.ico">
+</head>
+<body>
+	<div id="header-container"></div>
+
+	<main>
+		<section class="hero">
+			<div class="container">
+				<span class="badge">Présentiel • Individuel • Sur-mesure</span>
+				<h1>Cours d’anglais et préparation aux concours, examens et entretiens</h1>
+				<p class="lead">Progresser vite, gagner en confiance, réussir vos objectifs académiques et professionnels.</p>
+
+				<!-- Segmented control -->
+				<div class="segmented two" data-index="0" id="rubrique-toggle" style="margin: 20px 0 20px;">
+					<div class="thumb" aria-hidden="true"></div>
+					<div class="option" data-value="anglais" data-active="true"><center>Cours d’anglais</center></div>
+					<div class="option" data-value="prepa"><center>Préparations oraux & entretiens</center></div>
+				</div>
+
+				<!-- Dynamic CTAs -->
+				<div style="display:flex; gap:20px; flex-wrap:wrap; margin: 6px 0 8px;">
+					<a class="btn" id="cta-primary" href="contact.html#rdv">Réserver un premier cours</a>
+					<a class="btn secondary" id="cta-secondary" href="cours.html">Voir les cours</a>
+					<a class="btn accent" id="cta-accent" href="preparations.html" style="display:none;">Voir les préparations</a>
+				</div>
+
+				<div class="kpis" style="margin:6px 0 8px;">
+					<div class="kpi">+150 élèves accompagnés</div>
+					<div class="kpi"><a href="https://www.google.com/search?sca_esv=fbce5c1644a5d5c8&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-EwGjvcR7T1i_JDol5vLgaKh9hWUkOuLYsy23uDNtzSNn8d0qMjeaIEWNNeAm3fAe1QrnFc1Xk3sc62u5HCaB3emowBCpO6vFuKvtm3jjtkMefjaejQ%3D%3D&q=Albaret+Elisabeth+Reviews&sa=X&ved=2ahUKEwjDrauV3c6QAxXmMfsDHbOoFN0Q0bkNegQIIxAE&biw=1430&bih=788&dpr=2#lrd=" rel="noopener" target="_blank">⭐⭐⭐⭐⭐ Avis Google</a></div>
+					<div class="kpi"><a href="https://www.google.com/search?sca_esv=fbce5c1644a5d5c8&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-EwGjvcR7T1i_JDol5vLgaKh9hWUkOuLYsy23uDNtzSNn8d0qMjeaIEWNNeAm3fAe1QrnFc1Xk3sc62u5HCaB3emowBCpO6vFuKvtm3jjtkMefjaejQ%3D%3D&q=Albaret+Elisabeth+Reviews&sa=X&ved=2ahUKEwjDrauV3c6QAxXmMfsDHbOoFN0Q0bkNegQIIxAE&biw=1430&bih=788&dpr=2#lrd="  rel="noopener" target="_blank">Méthode personnalisée</a></div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="container grid grid-2">
+				<div class="card">
+					<h2 class="section-title">Qui suis-je ?</h2>
+					<p>Professeur d’Anglais diplômée, formatrice agréée auprès d’adultes et professionnels, formatrice TOEIC et TOEFL, et traductrice.</p>
+					<p>Je vous propose de vous apprendre un anglais utile, vivant et opérationnel, de manière personnalisée, dynamique et interactive. Egalement, coach en communication à l'oral en anglais, je propose de préparer les étudiants et jeunes professionnels aux concours et examens des grandes écoles et entretiens d'embauche, et les professionnels à la prise de parole en public (conférences, allocutions, interview, etc).</p>
+					<p><a class="btn" href="apropos.html">En savoir plus</a></p>
+				</div>
+				<div class="card">
+					<img src="assets/img/elisa.png" alt="Elisabeth Albaret" style="width:100%; border-radius:14px;" />
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="container">
+				<!-- Panels controlled by segmented control -->
+				<div id="view-anglais" class="view-panel active">
+					<h2 class="section-title">Cours d’anglais</h2>
+					<p class="section-subtitle">Conversation, grammaire, prononciation, vocabulaire — niveaux A1 à C2. </p>
+					<p class="section-subtitle">Préparation aux examens: TOEIC, TOEFL, IELTS et Cambridge.</p>
+					<div class="grid grid-3">
+						<div class="card"><strong>Conversation</strong><p>Jeux de rôle, fluidité et confiance.</p></div>
+						<div class="card"><strong>Grammaire & précision</strong><p>Points clés, exercices courts, corrigés.</p></div>
+						<div class="card"><strong>Prononciation</strong><p>Minimal pairs, accent tonique.</p></div>
+					</div>
+				</div>
+
+				<div id="view-prepa" class="view-panel">
+					<h2 class="section-title">Préparations examens & entretiens</h2>
+					<p class="section-subtitle">concours écoles, entretiens académiques et pro.</p>
+					<div class="grid grid-3">
+						<div class="card"><strong>Examens</strong><p>Stratégies, entraînements chronométrés, corrections.</p></div>
+						<div class="card"><strong>Concours</strong><p>Méthode, structure, gestion du temps.</p></div>
+						<div class="card"><strong>Entretiens</strong><p>Pitch, STAR, gestion du stress.</p></div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="container">
+				<h2 class="section-title">Témoignages récents</h2>
+				<p class="section-subtitle">Des progrès concrets et des résultats mesurables.</p>
+				<div class="grid grid-3">
+					<div class="card testimonial"><p class="quote">« En 3 mois, j’ai atteint un niveau C1. Pédagogie ultra claire. »</p><div>— Chloé R., étudiante</div></div>
+					<div class="card testimonial"><p class="quote">« TOEIC: +175 points en 8 semaines. Méthode imparable. »</p><div>— Thomas E., école d’ingénieurs</div></div>
+					<div class="card testimonial"><p class="quote">« Entretien: pitch structuré, j’ai été prise. »</p><div>— Sophie L., alternance</div></div>
+				</div>
+				<p style="margin-top:14px;"><a href="apropos.html#temoignages">Lire tous les témoignages</a></p>
+			</div>
+		</section>
+	</main>
+
+	<div id="footer-container"></div>
+
+	<script type="module" src="assets/js/main.js"></script>
+</body>
+</html>
