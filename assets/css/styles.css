@@ -14,6 +14,9 @@
   --shadow-1: 0 4px 14px rgba(2, 6, 23, 0.06);
   --shadow-2: 0 10px 24px rgba(2, 6, 23, 0.08);
 }
+li {
+  padding-bottom: 12px;
+}
 
 * { box-sizing: border-box; }
 
