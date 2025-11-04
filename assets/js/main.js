@@ -1,52 +1,3 @@
-// Firebase (modular v9+) — configure your project here
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
-import { getFirestore, collection, addDoc, serverTimestamp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
-
-// TODO: Replace with your own Firebase config
-
-const firebaseConfig = {
-// apiKey: "YOUR_API_KEY",
-// authDomain: "YOUR_AUTH_DOMAIN",
-// projectId: "YOUR_PROJECT_ID",
-// storageBucket: "YOUR_STORAGE_BUCKET",
-// messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-// appId: "YOUR_APP_ID"	
-  };
-let db = null;
-try {
-	const app = initializeApp(firebaseConfig);
-	db = getFirestore(app);
-} catch (e) {
-	console.warn('Firebase non configuré ou invalide. Les sauvegardes seront ignorées.', e);
-}
-
-async function saveContactToFirestore(payload) {
-	if (!db) return { skipped: true };
-	try {
-		await addDoc(collection(db, 'contacts'), {
-			...payload,
-			createdAt: serverTimestamp()
-		});
-		return { ok: true };
-	} catch (e) {
-		console.error('Firestore contact error', e);
-		return { error: true };
-	}
-}
-
-async function saveResourceToFirestore(payload) {
-	if (!db) return { skipped: true };
-	try {
-		await addDoc(collection(db, 'resources'), {
-			...payload,
-			createdAt: serverTimestamp()
-		});
-		return { ok: true };
-	} catch (e) {
-		console.error('Firestore resource error', e);
-		return { error: true };
-	}
-}
 
 // Load header and footer
 function loadHeaderFooter() {
@@ -163,19 +114,17 @@ document.addEventListener('DOMContentLoaded', function () {
 			var objectif = (formData.get('objectif') || '').toString().trim();
 			var message = (formData.get('message') || '').toString().trim();
 
-			// Save to Firestore (non bloquant pour l'UX)
-			saveContactToFirestore({ name, email, phone, objectif, message, source: 'contact' });
-
+			
 			// WhatsApp redirect
 			var WHATSAPP_NUMBER = '33688820921';
 			var text = [
 				"Bonjour,",
 				"\nNouvelle demande depuis le site :",
-				name ? ("\n• Nom : " + name) : '',
-				email ? ("\n• Email : " + email) : '',
-				phone ? ("\n• Téléphone : " + phone) : '',
-				objectif ? ("\n• Objectif : " + objectif) : '',
-				message ? ("\n• Message : \n" + message) : ''
+				name ? ("\nNom : " + name) : '',
+				email ? ("\nEmail : " + email) : '',
+				phone ? ("\nTéléphone : " + phone) : '',
+				objectif ? ("\nObjectif : " + objectif) : '',
+				message ? ("\nMessage : \n" + message) : ''
 			].join('');
 
 			var url = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(text);
@@ -183,33 +132,5 @@ document.addEventListener('DOMContentLoaded', function () {
 		});
 	}
 
-	// Resource downloads: require email, store to Firestore
-	document.querySelectorAll('[data-resource-download]')
-		.forEach(function(btn){
-			btn.addEventListener('click', function(e){
-				e.preventDefault();
-				var email = (localStorage.getItem('resource_email') || '').trim();
-				if (!email) {
-					email = window.prompt('Entrez votre email pour recevoir les ressources :');
-					if (!email) return;
-					localStorage.setItem('resource_email', email);
-					saveResourceToFirestore({ email: email, source: 'resource' });
-				} else {
-					saveResourceToFirestore({ email: email, source: 'resource' });
-				}
-				var target = btn.getAttribute('data-href');
-				if (target && target !== '#') {
-					window.open(target, '_blank');
-
-					var a = document.createElement('a');
-					a.href = target;
-					a.download = ''; // Laisse vide pour garder le nom original du fichier
-					document.body.appendChild(a);
-					a.click();
-					document.body.removeChild(a);
-				} else {
-					alert('Merci ! Le téléchargement va être disponible prochainement.');
-				}
-			});
-		});
+	
 });
